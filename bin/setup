@@ -1,0 +1,65 @@
+#!/bin/bash
+
+xcode-select --install
+
+install_or_upgrade_homebrew() {
+  if hash brew 2>/dev/null; then
+    brew upgrade
+  else
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew tap homebrew/cask-versions
+    brew tap thoughtbot/formulae
+    brew tap heroku/brew
+  fi
+}
+
+install_brew_packages() {
+  declare -a packages_to_install=("git"
+                                  "asdf"
+                                  "postgres"
+                                  "heroku"
+                                  "rcm"
+                                  "redis"
+                                  "yarn")
+  installed_packages=$(brew list)
+
+  for package in "${packages_to_install[@]}"
+  do
+    if [[ $installed_packages == *"$package"* ]]; then
+      echo "$package already installed through homebrew."
+    else
+      brew install $package
+    fi
+  done
+}
+
+install_brew_cask_packages() {
+  declare -a packages_to_install=("firefox"
+                                  "firefox-developer-edition"
+                                  "google-chrome"
+                                  "ngrok"
+                                  "slack"
+                                  "spotify"
+                                  "sublime-text"
+                                  "visual-studio-code"
+                                  "whatsapp")
+  installed_packages=$(brew cask list)
+
+  for package in "${packages_to_install[@]}"
+  do
+    if [[ $installed_packages == *"$package"* ]]; then
+      echo "$package already installed through brew cask."
+    else
+      brew cask install $package
+    fi
+  done
+}
+
+install_or_upgrade_homebrew
+install_brew_packages
+install_brew_cask_packages
+
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+env RCRC=$HOME/dotfiles/rcrc rcup
+sh $current_dir/update_sublime

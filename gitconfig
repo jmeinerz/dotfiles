@@ -1,0 +1,13 @@
+[init]
+  templatedir = ~/.git-template
+[user]
+  name = Jonas Meinerz
+  email = jonas@thoughtbot.com
+[push]
+  default = current
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[alias]
+  glog = log -E -i --grep

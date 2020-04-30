@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"JsPrettier",
+		"LSP",
+		"Material Theme",
+		"Package Control",
+		"RailsGoToSpec",
+		"RuboCop",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-ruby",
+		"SyncedSideBar"
+	]
+}
