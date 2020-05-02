@@ -63,3 +63,4 @@ current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 env RCRC=$HOME/dotfiles/rcrc rcup
 sh $current_dir/update_sublime
+vim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa

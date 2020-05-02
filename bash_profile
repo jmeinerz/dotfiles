@@ -2,6 +2,8 @@
 
 alias ls="ls -G"
 
+[ -f ~/.bashrc ] && source ~/.bashrc
+
 # Git
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
