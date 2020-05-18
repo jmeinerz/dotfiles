@@ -1,9 +1,0 @@
-#!/bin/bash
-
-sublime_location="/Users/$USER/Library/Application Support/Sublime Text 3/Packages/User"
-current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-for filename in $current_dir/../sublime-text/*; do
-  name=$(basename "$filename")
-  ln -i "$filename" "$sublime_location/$name"
-done
