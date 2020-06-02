@@ -16,6 +16,7 @@ call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
 Plug 'christoomey/vim-run-interactive'
+Plug 'christoomey/vim-tmux-navigator'
 
 " If fzf has already been installed via Homebrew, use the existing fzf
 " Otherwise, install fzf. The `--all` flag makes fzf accessible outside of vim
