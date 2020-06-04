@@ -11,3 +11,5 @@
   prune = true
 [alias]
   glog = log -E -i --grep
+[pull]
+  ff = only
