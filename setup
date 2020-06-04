@@ -34,7 +34,8 @@ install_brew_packages() {
 }
 
 install_brew_cask_packages() {
-  declare -a packages_to_install=("firefox"
+  declare -a packages_to_install=("alacritty"
+                                  "firefox"
                                   "firefox-developer-edition"
                                   "google-chrome"
                                   "ngrok"
