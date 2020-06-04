@@ -11,5 +11,6 @@
   prune = true
 [alias]
   glog = log -E -i --grep
+  pf = push --force-with-lease
 [pull]
   ff = only
