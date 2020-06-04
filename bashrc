@@ -15,3 +15,5 @@ source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 for filename in ~/.bash/functions/*; do
   source $filename
 done
+
+export PATH="$HOME/.bin:$PATH"
