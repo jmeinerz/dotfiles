@@ -1,4 +1,5 @@
 set encoding=utf-8
+set background=dark
 
 " Leader
 let mapleader = " "
