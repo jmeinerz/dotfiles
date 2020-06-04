@@ -19,4 +19,4 @@ alias be="bundle exec"
 alias ber="bundle exec rake"
 alias bes="bundle exec rspec"
 
-PS1='\[\033[36m\]\u\[\033[m\]:\[\033[33;32m\]\w\[\033[m\]\[\033[0;31m\]$(current_git_branch)\[\033[0m\] \$ '
+PS1='\[\033[36m\]\w\[\033[m\]\[\033[33;32m\]$(current_git_branch)\[\033[0m\] \$ '
