@@ -27,8 +27,8 @@ colors:
   # Normal colors
   normal:
     black:   '#073642' # base02
-    red:     '#dc322f' # red
-    green:   '#859900' # green
+    red:     '#e04643' # red
+    green:   '#2dc722' # green
     yellow:  '#b58900' # yellow
     blue:    '#268bd2' # blue
     magenta: '#d33682' # magenta
