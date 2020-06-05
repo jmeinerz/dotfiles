@@ -1,2 +1,2 @@
-EXCLUDES="README.md setup sublime-text terminal"
+EXCLUDES="README.md setup sublime-text"
 DOTFILES_DIRS="$HOME/dotfiles"
