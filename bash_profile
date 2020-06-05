@@ -11,7 +11,6 @@ alias gd="git diff"
 alias gb="git branch"
 alias gl="git log"
 alias gcm="git checkout master"
-alias gprune="git remote prune origin"
 
 # Bundler
 
