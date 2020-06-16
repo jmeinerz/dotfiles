@@ -166,6 +166,9 @@ set diffopt+=vertical
 
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
 
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
