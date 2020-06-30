@@ -3,6 +3,14 @@ export DATA_SRC_PATH=~/Qonto
 source ~/Qonto/devenv/activate
 eval "$(docker-machine env qonto)"
 
+function qonto_pull {
+  for filename in ~/Qonto/*; do
+    cd $filename
+    git checkout master
+    git pull
+  done
+}
+
 function prod_api {
   kubectl config use-context cbs-production
   cd $HOME/Qonto/qonto-helm-vars
