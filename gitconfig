@@ -14,3 +14,5 @@
   pf = push --force-with-lease
 [pull]
   ff = only
+[includeIf "gitdir:~/Qonto/"]
+  path = ~/Qonto/gitconfig
