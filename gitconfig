@@ -12,6 +12,7 @@
 [alias]
   glog = log -E -i --grep
   pf = push --force-with-lease
+  can = commit --amend --no-edit
 [pull]
   ff = only
 [includeIf "gitdir:~/Qonto/"]
