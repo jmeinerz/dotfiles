@@ -4,11 +4,11 @@ window:
 
 font:
   normal:
-    family: "Source Code Pro"
+    family: "Menlo"
   bold:
-    familiy: "Source Code Pro"
+    familiy: "Menlo"
   italic:
-    family: "Source Code Pro"
+    family: "Menlo"
   size: 14.0
   use_thin_strokes: true
 
