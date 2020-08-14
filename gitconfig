@@ -13,6 +13,7 @@
   glog = log -E -i --grep
   pf = push --force-with-lease
   can = commit --amend --no-edit
+  canpf = !git can && git pf
 [pull]
   ff = only
 [includeIf "gitdir:~/Qonto/"]
