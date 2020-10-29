@@ -28,7 +28,7 @@ function stg_pods {
 
   case $2 in
     logs)
-      kubectl -n $1 logs $pod
+      kubectl -n $1 logs $pod -f
       ;;
     bash)
       kubectl -n $1 exec -it $pod -- /bin/bash
