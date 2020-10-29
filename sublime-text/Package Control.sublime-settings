@@ -20,6 +20,7 @@
 		"SublimeLinter",
 		"SublimeLinter-rubocop",
 		"SublimeLinter-ruby",
-		"SyncedSideBar"
+		"SyncedSideBar",
+		"TabNine"
 	]
 }
