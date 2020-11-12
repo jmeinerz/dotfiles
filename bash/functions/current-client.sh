@@ -2,6 +2,8 @@ export QONTO_SRC_PATH=~/Qonto
 export DATA_SRC_PATH=~/Qonto
 source ~/Qonto/devenv/activate
 
+alias onelogin='onelogin-aws-assume-role --onelogin-username jonas.meinerz.ext --client_id d8fa456813757a4c4fa78fe27d158b7fb17cc63f664adb55b751ad3a54029d04 --client_secret 192544b1a8e6e52aa77a619099ffd09fc2e8d9bc3a1a734484dbc74cb9f3dd8b --region eu --onelogin-app-id 387536 --onelogin-subdomain qonto --profile default --aws-region eu-west-3 --aws-account-id 674764870074 --aws-role-name qonto-team-backend --duration 43200'
+
 function qonto_pull {
   for filename in ~/Qonto/*; do
     cd $filename
