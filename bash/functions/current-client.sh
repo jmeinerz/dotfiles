@@ -40,3 +40,8 @@ function stg_pods {
       ;;
   esac
 }
+
+function devenv {
+  devenv_activate
+  eval $(docker-machine env qonto)
+}
