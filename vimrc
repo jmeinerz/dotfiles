@@ -10,16 +10,22 @@ set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set ruler         " show the cursor position all the time
+set cursorline
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set autoread      " Automatically :read files changed outside of vim
 set modelines=0   " Disable modelines as a security precaution
 set nomodeline
 set relativenumber " Use relative numbers by default
 set scrolloff=999  " Center cursor when scrolling
 " Dim status bar of windows that are not active
 highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+
+" move lines based on screen, not on linebreaks
+nnoremap j gj
+nnoremap k gk
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
