@@ -18,6 +18,12 @@ function prod_api {
   ./cli.sh --config environments/qonto/production.yaml run api-private-web --namespace=master --part-of=api -- bundle exec rails c
 }
 
+function prod_auth {
+  kubectl config use-context cbs-production
+  cd $HOME/Qonto/qonto-helm-vars
+  ./cli.sh --config environments/qonto/production.yaml run auth-private-web --namespace=master --part-of=auth -- bundle exec rails c
+}
+
 function prod_register {
   kubectl config use-context cbs-production
   cd $HOME/Qonto/qonto-helm-vars
