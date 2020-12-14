@@ -31,7 +31,7 @@ function prod_register {
 }
 
 function stg_pods {
-  kubectl config use-context cbs-staging
+  kubectl config use-context staging
   pod=$(kubectl -n $1 get pods | sed 's/ .*$//' | sed 1d | fzf --reverse)
 
   case $2 in
