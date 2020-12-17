@@ -10,7 +10,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
 alias gl="git log"
-alias gcm="git checkout master"
+alias gcm="git checkout main || git checkout master"
 
 # Bundler
 
