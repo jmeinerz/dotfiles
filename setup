@@ -20,8 +20,13 @@ install_brew_packages() {
                                   "heroku"
                                   "rcm"
                                   "redis"
+                                  "tree"
+                                  "tmux"
+                                  "vim"
+                                  "the_silver_searcher"
+                                  "gh"
                                   "yarn")
-  installed_packages=$(brew list)
+  installed_packages=$(brew list --formula)
 
   for package in "${packages_to_install[@]}"
   do
@@ -34,17 +39,22 @@ install_brew_packages() {
 }
 
 install_brew_cask_packages() {
-  declare -a packages_to_install=("alacritty"
+  declare -a packages_to_install=("1password"
+                                  "alacritty"
+                                  "basecamp"
+                                  "chromedriver"
                                   "firefox"
                                   "firefox-developer-edition"
                                   "google-chrome"
                                   "ngrok"
+                                  "postman"
                                   "slack"
                                   "spotify"
                                   "sublime-text"
+                                  "tuple"
                                   "visual-studio-code"
                                   "whatsapp")
-  installed_packages=$(brew cask list)
+  installed_packages=$(brew list --cask)
 
   for package in "${packages_to_install[@]}"
   do
