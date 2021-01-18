@@ -66,9 +66,18 @@ install_brew_cask_packages() {
   done
 }
 
+install_powerline_fonts() {
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
+}
+
 install_or_upgrade_homebrew
 install_brew_packages
 install_brew_cask_packages
+install_powerline_fonts
 
 current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 

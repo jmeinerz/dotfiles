@@ -4,12 +4,12 @@ window:
 
 font:
   normal:
-    family: "Menlo"
+    family: "Meslo LG S for Powerline"
   bold:
-    familiy: "Menlo"
+    familiy: "Meslo LG S Bold for Powerline"
   italic:
-    family: "Menlo"
-  size: 14.0
+    family: "Meslo LG S for Powerline"
+  size: 14.5
   use_thin_strokes: true
 
 # Colors (Solarized Dark)

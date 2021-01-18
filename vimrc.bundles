@@ -46,6 +46,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'zxqfl/tabnine-vim'
+Plug 'vim-airline/vim-airline'
 
 if g:has_async
   Plug 'dense-analysis/ale'
