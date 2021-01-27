@@ -92,4 +92,5 @@ for filename in $current_dir/../sublime-text/*; do
 done
 
 # Setup vim plugins
-vim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa
+source $HOME/.bashrc
+update_vim_plugins
