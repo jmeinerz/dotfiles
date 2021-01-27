@@ -20,8 +20,6 @@ set modelines=0   " Disable modelines as a security precaution
 set nomodeline
 set relativenumber " Use relative numbers by default
 set scrolloff=999  " Center cursor when scrolling
-" Dim status bar of windows that are not active
-highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
 
 " move lines based on screen, not on linebreaks
 nnoremap j gj
