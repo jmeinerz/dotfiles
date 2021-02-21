@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 xcode-select --install
 
@@ -79,18 +79,16 @@ install_brew_packages
 install_brew_cask_packages
 install_powerline_fonts
 
-current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
 env RCRC=$HOME/dotfiles/rcrc rcup
 
 # Setup sublime-text extensions
 sublime_location="/Users/$USER/Library/Application Support/Sublime Text 3/Packages/User"
 current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-for filename in $current_dir/../sublime-text/*; do
+for filename in $current_dir/sublime-text/*; do
   name=$(basename "$filename")
   ln -i "$filename" "$sublime_location/$name"
 done
 
 # Setup vim plugins
-source $HOME/.bashrc
+source $HOME/.zshrc
 update_vim_plugins

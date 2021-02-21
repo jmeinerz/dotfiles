@@ -2,7 +2,7 @@
 
 ## Setting up a new laptop
 
-```bash
+```sh
 cd ~
 git clone git@github.com:jmeinerz/dotfiles.git
 cd dotfiles
