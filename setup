@@ -61,7 +61,7 @@ install_brew_cask_packages() {
     if [[ $installed_packages == *"$package"* ]]; then
       echo "$package already installed through brew cask."
     else
-      brew cask install $package
+      brew install $package --cask
     fi
   done
 }
