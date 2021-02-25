@@ -1,0 +1,48 @@
+Host *
+  ForwardAgent yes
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host gp-bouncer
+  User ec2-user
+  HostName 34.226.221.152
+  ForwardAgent yes
+
+Host gp-demo-bastion
+  User jonas
+  HostName 83.151.214.35
+  ProxyJump gp-bouncer
+
+Host gp-demo
+  User jonas
+  HostName 10.10.0.3
+  ProxyJump gp-demo-bastion
+
+Host gp-demo-jenkins
+  User jonas
+  HostName 10.8.0.2
+  ProxyJump gp-demo-bastion
+
+Host efg-staging-bastion
+  User jmeinerz
+  HostName 51.179.214.178
+  ForwardAgent yes
+
+Host efg-staging
+  User jmeinerz
+  ProxyCommand ssh efg-staging-bastion -W 10.10.0.3:22
+
+Host efg-staging-jenkins
+  User jmeinerz
+  ProxyCommand ssh efg-staging-bastion -W 10.8.0.2:22
+
+Host efg-prod-bastion
+  User jmeinerz
+  HostName 83.151.208.126
+  ForwardAgent yes
+  ProxyJump gp-bouncer
+
+Host efg-prod-jenkins
+  User jmeinerz
+  ProxyCommand ssh efg-prod-bastion -W 10.8.0.2:22
