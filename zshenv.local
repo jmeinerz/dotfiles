@@ -4,5 +4,4 @@ autoload -Uz compinit && compinit
 # case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-PS1='\[\033[36m\]\w\[\033[m\]\[\033[33;32m\]$(current_git_branch)\[\033[0m\] \$ '
 PROMPT='%~ %# '
