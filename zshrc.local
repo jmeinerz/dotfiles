@@ -13,3 +13,7 @@ setopt PROMPT_SUBST
 PROMPT='%F{blue}%~%F{green}${vcs_info_msg_0_}%f %# '
 
 export PATH="$HOME/.bin:$PATH"
+
+if [ -z "$TMUX" ]; then
+  tat
+fi
