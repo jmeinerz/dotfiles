@@ -1,5 +1,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+. /usr/local/opt/asdf/asdf.sh
+
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
