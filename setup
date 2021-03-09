@@ -81,6 +81,8 @@ install_powerline_fonts
 
 env RCRC=$HOME/dotfiles/rcrc rcup
 
+asdf install
+
 # Setup sublime-text extensions
 sublime_location="/Users/$USER/Library/Application Support/Sublime Text 3/Packages/User"
 current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
