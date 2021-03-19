@@ -1,5 +1,21 @@
 {
 	"always_show_minimap_viewport": true,
+	"auto_complete": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source.python"
+		},
+		{
+			"characters": ":.(){}[],'\"=<>/\\+-|&*%=$#@! ",
+			"selector": "source & - source.python - constant.numeric"
+		},
+		{
+			"characters": " qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+			"selector": "text"
+		}
+	],
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
