@@ -5,12 +5,19 @@ window:
 font:
   normal:
     family: "Meslo LG S for Powerline"
+    style: "Regular"
   bold:
-    familiy: "Meslo LG S Bold for Powerline"
+    familiy: "Meslo LG S for Powerline"
+    style: "Bold"
   italic:
     family: "Meslo LG S for Powerline"
+    style: "Italic"
   size: 14.5
   use_thin_strokes: true
+
+cursor:
+  style: Beam
+  unfocused_hollow: true
 
 # Colors (Solarized Dark)
 colors:
@@ -26,7 +33,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#073642' # base02
+    black:   '#404e52' # base02
     red:     '#e04643' # red
     green:   '#2dc722' # green
     yellow:  '#b58900' # yellow

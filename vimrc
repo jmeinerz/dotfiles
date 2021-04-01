@@ -1,5 +1,6 @@
 set encoding=utf-8
 set background=dark
+hi Visual ctermbg=Black
 
 " Leader
 let mapleader = " "
