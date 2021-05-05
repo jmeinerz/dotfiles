@@ -16,11 +16,13 @@
 		"Package Control",
 		"RailsGoToSpec",
 		"RuboCop",
+		"SCSS",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-rubocop",
 		"SublimeLinter-ruby",
 		"SyncedSideBar",
-		"Tabnine"
+		"Tabnine",
+		"Vuejs Complete Package"
 	]
 }
