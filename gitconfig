@@ -16,5 +16,3 @@
   canpf = !git can && git pf
 [pull]
   ff = only
-[includeIf "gitdir:~/Qonto/"]
-  path = ~/Qonto/gitconfig
