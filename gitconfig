@@ -1,5 +1,6 @@
 [init]
   templatedir = ~/.git-template
+  defaultBranch = main
 [user]
   name = Jonas Meinerz
   email = jonas@thoughtbot.com
