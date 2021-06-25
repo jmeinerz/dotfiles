@@ -17,3 +17,5 @@
   canpf = !git can && git pf
 [pull]
   ff = only
+[core]
+  excludesfile = /Users/jmeinerz/.gitignore
