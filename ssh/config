@@ -28,6 +28,7 @@ Host efg-staging-bastion
   User jmeinerz
   HostName 51.179.214.178
   ForwardAgent yes
+  ProxyJump gp-bouncer
 
 Host efg-staging
   User jmeinerz
