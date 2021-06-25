@@ -1,4 +1,5 @@
 set encoding=utf-8
+
 set background=dark
 hi Visual ctermbg=Black
 
@@ -26,11 +27,7 @@ set scrolloff=999  " Center cursor when scrolling
 nnoremap j gj
 nnoremap k gk
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+syntax on
 
 let g:airline_powerline_fonts = 1
 
@@ -122,11 +119,9 @@ inoremap <S-Tab> <C-n>
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" Switch between alternative files
+nnoremap <silent> <Leader>A :A<CR>
+nnoremap <silent> <Leader>AV :AV<CR>
 
 " vim-test mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
@@ -134,9 +129,6 @@ nnoremap <silent> <Leader>s :TestNearest<CR>
 nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>a :TestSuite<CR>
 nnoremap <silent> <Leader>gt :TestVisit<CR>
-
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<Space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -175,8 +167,3 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascr
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
