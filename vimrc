@@ -167,3 +167,6 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascr
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Auto generate tags file on file write
+autocmd BufWritePost * silent! !.git/hooks/ctags > /dev/null 2>&1
