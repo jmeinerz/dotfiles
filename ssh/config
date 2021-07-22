@@ -9,20 +9,20 @@ Host gp-bouncer
   HostName 34.226.221.152
   ForwardAgent yes
 
-Host gp-demo-bastion
-  User jonas
+Host efg-demo-bastion
+  User jmeinerz
   HostName 83.151.214.35
   ProxyJump gp-bouncer
 
-Host gp-demo
-  User jonas
-  HostName 10.10.0.3
-  ProxyJump gp-demo-bastion
-
-Host gp-demo-jenkins
-  User jonas
+Host efg-demo-jenkins
+  User jmeinerz
   HostName 10.8.0.2
-  ProxyJump gp-demo-bastion
+  ProxyJump efg-demo-bastion
+
+Host efg-demo
+  User jmeinerz
+  HostName 10.10.0.3
+  ProxyJump efg-demo-bastion
 
 Host efg-staging-bastion
   User jmeinerz
@@ -30,13 +30,13 @@ Host efg-staging-bastion
   ForwardAgent yes
   ProxyJump gp-bouncer
 
-Host efg-staging
-  User jmeinerz
-  ProxyCommand ssh efg-staging-bastion -W 10.10.0.3:22
-
 Host efg-staging-jenkins
   User jmeinerz
   ProxyCommand ssh efg-staging-bastion -W 10.8.0.2:22
+
+Host efg-staging
+  User jmeinerz
+  ProxyCommand ssh efg-staging-bastion -W 10.10.0.3:22
 
 Host efg-prod-bastion
   User jmeinerz
@@ -47,3 +47,21 @@ Host efg-prod-bastion
 Host efg-prod-jenkins
   User jmeinerz
   ProxyCommand ssh efg-prod-bastion -W 10.8.0.2:22
+
+Host efg-prod
+  User jmeinerz
+  ProxyCommand ssh efg-prod-bastion -W 10.10.0.3:22
+
+Host efg-training-bastion
+  User jmeinerz
+  HostName 83.151.210.3
+  ForwardAgent yes
+  ProxyJump gp-bouncer
+
+Host efg-training-jenkins
+  User jmeinerz
+  ProxyCommand ssh efg-training-bastion -W 10.8.0.2:22
+
+Host efg-training
+  User jmeinerz
+  ProxyCommand ssh efg-training-bastion -W 10.10.0.3:22
