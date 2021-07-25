@@ -1,24 +1,4 @@
-if &compatible
-  set nocompatible
-end
-
-" Remove declared plugins
-function! s:UnPlug(plug_name)
-  if has_key(g:plugs, a:plug_name)
-    call remove(g:plugs, a:plug_name)
-  endif
-endfunction
-command!  -nargs=1 UnPlug call s:UnPlug(<args>)
-
-let g:has_async = v:version >= 800 || has('nvim')
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/bundle')
 
 " Define bundles via Github repos
 Plug 'christoomey/vim-run-interactive'
@@ -34,8 +14,6 @@ endif
 
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
-Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -48,8 +26,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
-Plug 'zxqfl/tabnine-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()

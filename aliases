@@ -2,6 +2,9 @@
 
 alias ls="ls -G"
 
+alias vim="nvim"
+alias vi="nvim"
+
 # Git
 
 alias gs="git status"

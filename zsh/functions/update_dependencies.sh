@@ -1,5 +1,5 @@
 update_vim_plugins() {
-  vim -u "$HOME"/.vimrc.bundles +PlugUpdate +PlugClean! +qa
+  nvim -u ~/.config/nvim/plugins.vim +PlugUpdate +PlugClean! +qa
 }
 
 update_dependencies() {
