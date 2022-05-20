@@ -1,0 +1,2 @@
+EXCLUDES=".git/ .gitignore rcrc README.md setup setup_spin setup_macos theme.terminal"
+DOTFILES_DIRS="$HOME/dotfiles"

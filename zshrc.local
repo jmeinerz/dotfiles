@@ -1,0 +1,22 @@
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f /usr/local/opt/asdf/libexec/asdf.sh ] && . /usr/local/opt/asdf/libexec/asdf.sh
+[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ] && . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' %b'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+
+PROMPT='%F{blue}%~%F{green}${vcs_info_msg_0_}%f %# '
+
+export PATH="$HOME/.bin:$PATH"
+
+if [ -z "$TMUX" ]; then
+  tat
+fi
