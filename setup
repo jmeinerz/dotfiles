@@ -1,0 +1,66 @@
+#!/bin/sh
+
+set -e
+
+check_dependency() {
+  command -v "$1" 1>/dev/null 2>/dev/null
+}
+
+install_dependency() {
+  case $1 in
+    "spin")
+      sudo apt-get install -y $2
+      ;;
+    "macos")
+      brew install $2
+      ;;
+  esac
+}
+
+setup_spin() {
+  check_dependency "ag" || install_dependency "spin" "silversearcher-ag"
+  check_dependency "ctags" || install_dependency "spin" "ctags"
+  check_dependency "fzf" || install_dependency "spin" "fzf"
+  check_dependency "nvim" || install_dependency "spin" "neovim"
+  check_dependency "rcup" || install_dependency "spin" "rcm"
+  check_dependency "tmux" || install_dependency "spin" "tmux"
+}
+
+setup_macos() {
+  check_dependency "ag" || install_dependency "macos" "the_silver_searcher"
+  check_dependency "asdf" || install_dependency "macos" "asdf"
+  check_dependency "ctags" || install_dependency "macos" "ctags"
+  check_dependency "fzf" || install_dependency "macos" "fzf"
+  check_dependency "nvim" || install_dependency "macos" "neovim"
+  check_dependency "rcup" || install_dependency "macos" "rcm"
+  check_dependency "tmux" || install_dependency "macos" "tmux"
+}
+
+install_powerline_fonts() {
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
+}
+
+if [ "$SPIN" ]; then
+  setup_spin
+  yes | env RCRC=$HOME/dotfiles/rcrc rcup
+else
+  setup_macos
+  install_powerline_fonts
+  env RCRC=$HOME/dotfiles/rcrc rcup
+  asdf plugin add python
+  asdf plugin add nodejs
+  asdf install
+  python3 -m pip install --upgrade pip
+fi
+
+# Install vim-plug and plugins
+pip3 install --user pynvim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+nvim -u $HOME/.config/nvim/plugins.vim +PlugInstall +UpdateRemotePlugins +qa

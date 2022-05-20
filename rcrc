@@ -1,0 +1,2 @@
+EXCLUDES=".git/ .gitignore rcrc README.md setup setup_spin setup_macos *.terminal *.itermcolors iterm_profile.json"
+DOTFILES_DIRS="$HOME/dotfiles"
