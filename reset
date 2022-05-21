@@ -1,0 +1,4 @@
+rcdn
+cd ~
+brew uninstall asdf fzf neovim rcm the_silver_searcher tmux
+rm -rf .aliases .asdf .asdfrc .bin .config/nvim .git-template .gitconfig .gitignore .gitmessage .inputrc .local/share/nvim .tmux.conf .tool-version .tool-versions .zsh/ .zshenv .zshenv.local .zshrc .zshrc.local .zshrc.spin
