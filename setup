@@ -31,6 +31,7 @@ setup_macos() {
   check_dependency "asdf" || install_dependency "macos" "asdf"
   check_dependency "ctags" || install_dependency "macos" "ctags"
   check_dependency "fzf" || install_dependency "macos" "fzf"
+  check_dependency "jq" || install_dependency "macos" "jq"
   check_dependency "nvim" || install_dependency "macos" "neovim"
   check_dependency "rcup" || install_dependency "macos" "rcm"
   check_dependency "tmux" || install_dependency "macos" "tmux"
