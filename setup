@@ -19,7 +19,7 @@ install_dependency() {
 
 setup_spin() {
   check_dependency "ag" || install_dependency "spin" "silversearcher-ag"
-  check_dependency "ctags" || install_dependency "spin" "ctags"
+  check_dependency "ctags-exuberant" || install_dependency "spin" "exuberant-ctags"
   check_dependency "fzf" || install_dependency "spin" "fzf"
   check_dependency "nvim" || install_dependency "spin" "neovim"
   check_dependency "rcup" || install_dependency "spin" "rcm"
