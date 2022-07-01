@@ -30,5 +30,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'github/copilot.vim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()

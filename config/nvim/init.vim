@@ -52,6 +52,8 @@ endif
 
 source ~/.config/nvim/plugins.vim
 
+lua require'lsp-config'
+
 " Fonts for the status bar
 let g:airline_powerline_fonts = 1
 
