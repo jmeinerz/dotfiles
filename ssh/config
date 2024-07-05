@@ -1,0 +1,8 @@
+# Important: leave this at the top of this SSH configuration file.
+Include ~/.spin/ssh/include
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_ed25519

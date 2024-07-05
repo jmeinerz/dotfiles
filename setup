@@ -1,0 +1,59 @@
+#!/bin/sh
+
+set -e
+
+check_dependency() {
+  command -v "$1" 1>/dev/null 2>/dev/null
+}
+
+install_dependency() {
+  case $1 in
+    "linux")
+      sudo apt-get install -y $2
+      ;;
+    "macos")
+      brew install $2
+      ;;
+  esac
+}
+
+setup_macos() {
+  check_dependency "brew" || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  check_dependency "ag" || install_dependency "macos" "the_silver_searcher"
+  check_dependency "rg" || install_dependency "macos" "ripgrep"
+  check_dependency "asdf" || install_dependency "macos" "asdf"
+  check_dependency "ctags" || install_dependency "macos" "ctags"
+  check_dependency "fzf" || install_dependency "macos" "fzf"
+  check_dependency "jq" || install_dependency "macos" "jq"
+  check_dependency "nvim" || install_dependency "macos" "neovim"
+  check_dependency "rcup" || install_dependency "macos" "rcm"
+  check_dependency "tmux" || install_dependency "macos" "tmux"
+  check_dependency "alacritty" || install_dependency "macos" "alacritty"
+  check_dependency "tree" || install_dependency "macos" "tree"
+}
+
+setup_macos
+env RCRC=$HOME/dotfiles/rcrc rcup
+asdf plugin add python
+asdf plugin add nodejs
+asdf plugin add ruby
+asdf plugin update --all
+asdf install
+
+FONT_FILE_NAME="/Library/Fonts/MesloLGMNerdFont-Regular.ttf"
+if [[ ! -f $FONT_FILE_NAME ]]; then
+  curl -so $FONT_FILE_NAME https://raw.githubusercontent.com/ryanoasis/nerd-fonts/630a3eebaae362059cbc7a948126a9339db2e548/patched-fonts/Meslo/M/Regular/MesloLGMNerdFont-Regular.ttf
+fi
+
+echo "Automated steps done! Now onto the manual bits..."
+manual_steps=(
+  "Open Alacritty > alacritty"
+  "Set up SSH key > ssh-keygen"
+  "Add SSH key to agent > ssh-add"
+  "Login to GitHub > gh auth login"
+  "Add SSH key to GitHub > gh ssh-key add"
+)
+for ((i=0; i<${#manual_steps[@]}; i++)); do
+  echo "${i} - ${manual_steps[i]}"
+  read -p "Press Enter when done" < /dev/tty
+done

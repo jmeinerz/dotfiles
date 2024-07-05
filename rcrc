@@ -1,0 +1,2 @@
+EXCLUDES=".git/ .gitignore rcrc README.md setup"
+DOTFILES_DIRS="$HOME/dotfiles"

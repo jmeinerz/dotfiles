@@ -1,0 +1,25 @@
+[init]
+  templatedir = ~/.git-template
+  defaultBranch = main
+[user]
+  name = Jonas Calvi Meinerz
+  email = jonas.calvi@gmail.com
+[push]
+  default = current
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[alias]
+  glog = log -E -i --grep
+  pf = push --force-with-lease
+  can = commit --amend --no-edit
+  canpf = !git can && git pf
+[pull]
+  ff = only
+[core]
+  excludesfile = /Users/jmeinerz/.gitignore
+[credential "https://github.com"]
+  helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !/usr/local/bin/gh auth git-credential
