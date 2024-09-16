@@ -36,5 +36,6 @@ return {
         search = vim.fn.input("Search project > "),
       })
     end, { desc = "Search in project" })
+    keymap.set("n", "<C-F>", "<cmd>Telescope grep_string<CR>", { desc = "Find word under cursor in project" })
   end
 }
