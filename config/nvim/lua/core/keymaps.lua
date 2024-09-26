@@ -16,6 +16,7 @@ keymap.set("n", "<C-g>a", "<cmd>Git add -p<CR>", { desc = "Git Add (interactive)
 keymap.set("n", "<C-g>c", "<cmd>Git checkout -p<CR>", { desc = "Git Checkout (interactive)" })
 keymap.set("n", "<C-g>bl", "<cmd>Git blame<CR>", { desc = "Git blame" })
 keymap.set("n", "<C-g>u", "<cmd>Git commit --amend --no-edit<CR>", { desc = "Git ammend commit" })
+keymap.set("n", "<C-g>g", "<cmd>GBrowse<CR>", { desc = "Open file on GitHub" })
 
 local function bufferPath()
   local filepath = vim.fn.expand('%')
