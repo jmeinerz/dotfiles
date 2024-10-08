@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 keymap.set("n", "<Leader><Leader>", "<C-^>", { desc = "Jump to previous file" })
 
 keymap.set("n", "<leader>§", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file tree" })
