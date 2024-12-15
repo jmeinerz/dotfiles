@@ -9,10 +9,11 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local builtin = require("telescope.builtin")
 
     telescope.setup({
       defaults = {
-        path_display = { "smart" },
+        path_display = { "truncate" },
         mappings = {
           i = {
             ["<C-j>"] = actions.move_selection_next,
@@ -34,7 +35,7 @@ return {
     local keymap = vim.keymap
 
     keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy file finder" })
-    keymap.set("n", "\\", require "telescope.builtin".live_grep, { desc = "Search in project" })
+    keymap.set("n", "\\", builtin.live_grep, { desc = "Search in project" })
     keymap.set("n", "<C-F>", "<cmd>Telescope grep_string<CR>", { desc = "Find word under cursor in project" })
   end
 }
