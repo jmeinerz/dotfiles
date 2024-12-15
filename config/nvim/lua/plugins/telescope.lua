@@ -23,6 +23,9 @@ return {
           "node_modules",
           "typescript",
         }
+      },
+      extensions = {
+        fzf = {}
       }
     })
 
@@ -31,11 +34,7 @@ return {
     local keymap = vim.keymap
 
     keymap.set("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy file finder" })
-    keymap.set("n", "\\", function()
-      require("telescope.builtin").grep_string({
-        search = vim.fn.input("Search project > "),
-      })
-    end, { desc = "Search in project" })
+    keymap.set("n", "\\", require "telescope.builtin".live_grep, { desc = "Search in project" })
     keymap.set("n", "<C-F>", "<cmd>Telescope grep_string<CR>", { desc = "Find word under cursor in project" })
   end
 }
