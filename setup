@@ -33,7 +33,7 @@ setup_macos() {
 }
 
 setup_macos
-env RCRC=$HOME/dotfiles/rcrc rcup
+./push-nvim-config
 asdf plugin add python
 asdf plugin add nodejs
 asdf plugin add ruby
