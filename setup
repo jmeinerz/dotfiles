@@ -30,6 +30,8 @@ setup_macos() {
   check_dependency "tmux" || install_dependency "macos" "tmux"
   check_dependency "alacritty" || install_dependency "macos" "alacritty"
   check_dependency "tree" || install_dependency "macos" "tree"
+  check_dependency "wget" || install_dependency "macos" "wget"
+  check_dependency "fd" || install_dependency "macos" "fd"
 }
 
 setup_macos
