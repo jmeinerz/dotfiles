@@ -6,17 +6,17 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescriptreact = { "prettierd" },
+        javascript = { "biome" },
+        typescript = { "biome" },
+        javascriptreact = { "biome" },
+        typescriptreact = { "biome" },
         svelte = { "prettierd" },
         css = { "prettierd" },
         html = { "prettierd" },
-        json = { "prettierd" },
+        json = { "biome" },
         yaml = { "prettierd" },
         markdown = { "prettierd" },
-        graphql = { "prettierd" },
+        graphql = { "biome" },
         liquid = { "prettierd" },
         python = { "isort", "black" },
       },
