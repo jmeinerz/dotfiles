@@ -10,7 +10,7 @@ bindkey "^[b" backward-word
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-export PATH="$HOME/.bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.bin:$PATH"
 
 # Load version control information
 autoload -Uz vcs_info
