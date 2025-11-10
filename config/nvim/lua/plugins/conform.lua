@@ -6,19 +6,20 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        javascript = { "biome" },
-        typescript = { "biome" },
-        javascriptreact = { "biome" },
-        typescriptreact = { "biome" },
+        javascript = { "prettierd", "prettier-plugin-organize-imports" },
+        typescript = { "prettierd", "prettier-plugin-organize-imports" },
+        javascriptreact = { "prettierd", "prettier-plugin-organize-imports" },
+        typescriptreact = { "prettierd", "prettier-plugin-organize-imports" },
         svelte = { "prettierd" },
         css = { "prettierd" },
         html = { "prettierd" },
-        json = { "biome" },
+        json = { "prettierd" },
         yaml = { "prettierd" },
         markdown = { "prettierd" },
-        graphql = { "biome" },
+        graphql = { "prettierd" },
         liquid = { "prettierd" },
         python = { "isort", "black" },
+        ruby = { "rubocop" }
       },
       format_on_save = {
         lsp_fallback = true,
@@ -33,6 +34,6 @@ return {
         async = false,
         timeout_ms = 1000,
       })
-    end, { desc = "Format file or range (in visual mode)" })
+    end, { desc = "Format file or range" })
   end,
 }
