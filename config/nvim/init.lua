@@ -26,7 +26,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.textwidth = 80
-opt.colorcolumn = { 81 }
+opt.colorcolumn = '81'
 vim.cmd([[hi ColorColumn ctermbg=black guibg=black]])
 
 -- Show weird spaces (and tabs)
